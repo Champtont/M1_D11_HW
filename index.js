@@ -25,11 +25,12 @@ const addCssClass = function () {
 
 addCssClass();
 
+//Yay, I finally fixed it!!!
+
 const hideAllImg = function () {
-  let img = document.getElementsByClassName("img");
-  if (img.style.display === "block") {
-    img.style.display = "hidden";
-  } else {
-    img.style.display = "block";
+  let pics = document.querySelectorAll("img");
+  //pics.classList.toggle("hidden"); The problem was that I forgot that I was working with an array
+  for (let i = 0; i < pics.length; i++) {
+    pics[i].classList.toggle("hidden");
   }
 };
